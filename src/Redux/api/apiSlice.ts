@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const apiSlice = createApi({
+export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://65225aeaf43b1793841469d2.mockapi.io",
@@ -8,10 +8,7 @@ const apiSlice = createApi({
   tagTypes: ["Users"],
   endpoints: (builder) => ({
     fetchUser: builder.query({
-      query: () => ({
-        url: "/users",
-        method: "GET",
-      }),
+      query: () => "/users",
     }),
     fetchSingleUser: builder.query({
       query: (id) => ({
